@@ -1,6 +1,11 @@
 from rest_framework import generics, permissions
 from .models import User, Contact
 from .serializers import UserSerializer, ContactSerializer
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to the Spam Detection API")
+
 
 class UserCreateView(generics.CreateAPIView):
     queryset = User.objects.all()
